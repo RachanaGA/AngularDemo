@@ -1,0 +1,41 @@
+{
+  "employeeList": [
+    {
+      "employeeName": "Tom",
+      "email": "tom@gmail.com",
+      "gender": "Male",
+      "industry": "Health Care",
+      "hireDate": "2016-06-13T18:30:00.000Z",
+      "salary": 769800,
+      "id": 1
+    },
+    {
+      "employeeName": "John",
+      "email": "john@gmail.com",
+      "gender": "Male",
+      "industry": "Financial & Insurance",
+      "hireDate": "2019-11-19T18:30:00.000Z",
+      "salary": 890700,
+      "id": 2
+    },
+    {
+      "employeeName": "Lisa",
+      "email": "lisa@gmail.com",
+      "gender": "Female",
+      "industry": "Telecommunications",
+      "hireDate": "2019-06-09T18:30:00.000Z",
+      "salary": 450980,
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

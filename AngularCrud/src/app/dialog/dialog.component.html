@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>Add Employee Details</h1>
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm">   
+        <mat-form-field appearance="outline">
+            <mat-label>Employee Name</mat-label>
+            <input [class.is-invalid]="employeeName?.invalid && employeeName?.touched" formControlName="employeeName" matInput placeholder="Enter Name" >
+            <mat-error>
+                <small [class.d-none]="employeeName?.valid || employeeName?.untouched" class="text-danger">Employee name is required</small>
+            </mat-error>
+        </mat-form-field>
+        
+        <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input [class.is-invalid]="email?.invalid && email?.touched" formControlName="email" matInput type="text" placeholder="abc@example.com">
+              <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+              <mat-error>
+                <small [class.d-none]="email?.valid || email?.untouched" class="text-danger">Email is required</small>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+        <label for="">Gender</label><br>
+        <mat-radio-group formControlName="gender" >
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Industry/Domain</mat-label>
+            <mat-select formControlName="industry">
+                <mat-option value="Automotive">Automotive</mat-option>
+                <mat-option value="Financial & Insurance">Financial & Insurance</mat-option>
+                <mat-option value="Health Care">Health Care</mat-option>
+                <mat-option value="Telecommunications">Telecommunications</mat-option>
+                <mat-option value="Other">Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Hire Date</mat-label>
+            <input formControlName="hireDate" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Salary</mat-label>
+            <input formControlName="salary" matInput type="number" placeholder="0">
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'" class="example-button-row">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button [disabled]='!employeeForm.valid' mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+</div>
+
